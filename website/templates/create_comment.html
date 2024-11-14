@@ -1,0 +1,20 @@
+{% extends "base.html" %} 
+{% block title %}Create_Comment{% endblock %} 
+{% block content %}
+<div style ="margin:50px;
+           border:50px">
+    <h1>Add Comment</h1>
+</div>
+<div style="margin:50px;
+            border:50px">
+    <form method="POST">
+        <div class="mb-3">
+            <input type="text" class="form-control" id="text" name="text" placeholder="Add your comment..." required>
+        </div>
+        <div class="d-grid gap-2 d-md-block">
+            <button class="btn btn-outline-primary" type="submit">Comment</button>
+            <a href = '/home'><button class="btn btn-outline-primary" type="button">Back</button></a>
+        </div>
+    </form>
+</div>
+{% endblock %}        

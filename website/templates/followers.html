@@ -1,0 +1,19 @@
+{% extends "base.html" %} 
+{% block title %}Followers{% endblock %} 
+{% block content %} 
+<div style="margin:50px; border:50px; text-align:left;" class="text-dark">
+    <h3>{{ user.user_name }}'s Followers</h3>
+    <table class="table table-hover">
+        {% for follow in follows %}
+        {% if follow.user != user %}
+            <tr>
+                <td>
+                    <a href="/UserProfile/{{ follow.user.user_name }}">{{follow.user.user_name}}</a>
+                </td>
+            </tr>
+        {% endif %}     
+        {% endfor %} 
+    </table>
+    <a href = "/UserProfile/{{ user.user_name }}"><button type = "button" class = "btn btn-outline-primary">Back</button></a>
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "base.html" %} 
+{% block title %}Sign Up{% endblock %} 
+{% block content %}
+<div class="container-fluid vh-100 d-flex justify-content-center align-items-center" style="background-color: #fafafa;">
+    <div class="card p-4" style="width: 100%; max-width: 350px; border: 1px solid #dbdbdb; border-radius: 10px;">
+        <!-- Logo (Instagram-like) -->
+        <h1 class="text-center mb-4" style="font-family: 'Lobster', cursive; font-size: 2.5rem; color: #262626;">Instagram</h1>
+        
+        <!-- Sign Up Form -->
+        <form method="post">
+            <div class="mb-3">
+                <input type="text" class="form-control" id="user_name" name="user_name" placeholder="Username" required>
+            </div>
+            <div class="mb-3">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email ID" required>
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password" aria-describedby="passwordhelp" required>
+            </div>
+            <div id="passwordhelp" class="form-text text-center mb-3" style="font-size: 0.85rem;">
+                Your password must be 8 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+            </div>
+            <button type="submit" class="btn btn-primary w-100 mb-3" style="background-color: #0095f6; border: none;">Sign up</button>
+        </form>
+        
+        <!-- Divider -->
+        <div class="d-flex align-items-center justify-content-center my-3">
+            <hr class="flex-grow-1" style="border-top: 1px solid #dbdbdb;">
+            <span class="mx-2 text-muted">OR</span>
+            <hr class="flex-grow-1" style="border-top: 1px solid #dbdbdb;">
+        </div>
+
+        <!-- Social Sign Up Option -->
+        <div class="text-center mb-3">
+            <a href="#" class="text-primary" style="font-weight: 500;">
+                <i class="fab fa-facebook-square"></i> Sign up with Facebook
+            </a>
+        </div>
+    </div>
+
+    <!-- Login Option Below Card -->
+    <div class="text-center mt-3 p-3" style="width: 100%; max-width: 350px; border: 1px solid #dbdbdb; background-color: white;">
+        <p class="mb-0">Have an account? <a href="/login" class="text-primary fw-bold">Log in</a></p>
+    </div>
+</div>
+{% endblock %}

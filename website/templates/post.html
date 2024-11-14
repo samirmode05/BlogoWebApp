@@ -1,0 +1,32 @@
+{% extends "base.html" %} 
+{% block title %}Post{% endblock %} 
+{% block content %} 
+<div style="margin:50px; border:50px; text-align:left;" class="text-dark">
+    <div id="posts">
+        <div class = "card border-dark mb-3" style ="margin: 50px; max-height:min-content;">
+            <div class = "card-header">
+                <div class="d-flex justify-content-start align-items-start">
+                   <h4><a href="/posts/{{post.user.user_name}}" >{{post.user.user_name}}</a></h4>
+                </div>
+            </div>    
+            <div class = "row g-4">
+                <div class = "col-md-4">
+                    <img src="static/uploads/{{ post.filename }}" class = "img-fluid rounded-start" alt="image posted"/>
+                </div>
+                <div class = "col-md-8">
+                    <div class = "card-body">
+                        <h5 class = "card-title">{{post.title}}</h5>
+                        <p class = "card-subtitle mb-2 text-muted">{{post.caption}}</p>
+                        <p class = "card-text">{{post.text}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer text-muted">
+                {{post.timestamp}}
+            </div>
+        </div>
+    </div>
+    <a href = "/home"><button type = "button" class = "btn btn-outline-primary">Back</button></a>
+</div>
+ 
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %} 
+{% block title %}Login{% endblock %} 
+{% block content %}
+<div class="container-fluid vh-100 d-flex justify-content-center align-items-center" style="background-color: #fafafa;">
+    <div class="card p-4" style="width: 100%; max-width: 350px; border: 1px solid #dbdbdb; border-radius: 10px;">
+        
+        <h1 class="text-center mb-4" style="font-family: 'Lobster', cursive; font-size: 2.5rem; color: #262626;">Blogo</h1>
+        
+        <!-- Login Form -->
+        <form method="post" action="/login">
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Phone number, username, or email" required>
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100" style="background-color: #0095f6; border: none;">Log in</button>
+        </form>
+        
+        <!-- Divider -->
+        <div class="d-flex align-items-center justify-content-center my-3">
+            <hr class="flex-grow-1" style="border-top: 1px solid #dbdbdb;">
+            <span class="mx-2 text-muted">OR</span>
+            <hr class="flex-grow-1" style="border-top: 1px solid #dbdbdb;">
+        </div>
+
+        <!-- Social Login Option -->
+        <div class="text-center mb-3">
+            <a href="#" class="text-primary" style="font-weight: 500;">
+                <i class="fab fa-facebook-square"></i> Log in with Facebook
+            </a>
+        </div>
+
+        <!-- Forgot Password Link -->
+        <div class="text-center mb-3">
+            <a href="#" class="text-muted" style="font-size: 0.9rem;">Forgot password?</a>
+        </div>
+    </div>
+
+    <!-- Signup Option Below Card -->
+    <div class="text-center mt-3 p-3" style="width: 100%; max-width: 350px; border: 1px solid #dbdbdb; background-color: white;">
+        <p class="mb-0">Don't have an account? <a href="/signup" class="text-primary fw-bold">Sign up</a></p>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %} 
+{% block title %}My Profile{% endblock %} 
+{% block content %} 
+<div class="card border-dark mb-3" style="margin: 50px ;width:18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{ user.user_name }}</h5>
+    <p class="card-text">
+      {% if current_user.is_authenticated and user != current_user and user.is_following(current_user) %} 
+        Follows you
+      {% endif %}  
+    </p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><h6>Total Posts: <span class="badge bg-secondary">{{ user.posts.count() }}</span></h6></li>
+    <li class="list-group-item">
+      <a href = "/followers/{{ user.user_name }}" class="link-dark">Followers</a>
+      <span class="badge bg-secondary">{{ user.followers.count() }}</span>
+    </li>
+    <li class="list-group-item">
+      <a href = "/following/{{ user.user_name }}" class="link-dark">Following</a>
+      <span class="badge bg-secondary">{{ user.followed.count() }}</span>
+    </li>
+  </ul>
+  <div class="card-body">
+    {% if user != current_user %} 
+      {% if not current_user.is_following(user) %} 
+        <a href = "/follow/{{ user.user_name }}" class = "btn btn-outline-secondary">Follow</a>
+      {% else %} 
+        <a href = "/unfollow/{{ user.user_name }}" class = "btn btn-outline-secondary">Unfollow</a>
+      {% endif %} 
+    {% endif %} 
+  </div>
+</div>
+<div>
+  <h5 style="margin: 50px;">{{ user.user_name }}'s Posts</h5>
+  {% include 'user_feed.html' %}
+</div>
+{% endblock %}

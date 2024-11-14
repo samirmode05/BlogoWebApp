@@ -1,0 +1,29 @@
+{% extends "base.html" %} 
+{% block title %}Edit_Post{% endblock %} 
+{% block content %} 
+<div style ="margin:50px;
+           border:50px">
+    <h1>Edit Your Post</h1>
+</div>
+<div style="margin:50px;
+            border:50px">
+    <form method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" name="title" required>
+        </div>
+        <div class="mb-3">
+            <label for="caption" class="form-label">Caption/Description</label>
+            <input type="text" class="form-control" id="caption" name="caption">
+        </div>
+        <div class="mb-3">
+            <label for="text" class="form-label">Enter your text here</label>
+            <textarea name="text" id="text" class="form-control" required></textarea>
+        </div><br>
+        <div class="d-grid gap-2 d-md-block">
+            <button class="btn btn-outline-primary" type="submit">Update</button>
+            <a href = '/home'><button class="btn btn-outline-primary" type="button">Back</button></a>
+        </div>
+    </form>
+</div>
+{% endblock %}

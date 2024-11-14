@@ -1,0 +1,14 @@
+{% extends "base.html" %} 
+{% block title %}Search{% endblock %} 
+{% block content %} 
+<div style="margin:50px; border:50px; text-align:left;" class="text-dark">
+    <h3>Searched For</h3>
+    <h6>{{ searched }}</h6>
+    <br>
+    <h4>Search Results</h4>
+    {% for post in posts %} 
+    <a href="{{ url_for('views.post',id = post.id) }}">{{ post.title }}</a>
+    {% endfor %}<br><br>
+    <a href = '/home'><button class="btn btn-outline-primary" type="button">Back</button></a>
+</div>
+{% endblock %}
